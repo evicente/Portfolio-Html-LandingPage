@@ -10,6 +10,10 @@
 			box-sizing: border-box;
 		}
 
+		body {
+			margin: 5%;
+		}
+
 		/* Variables Declaration */
 		:root {
 			/* Variables to control individual element's width*/
@@ -44,9 +48,9 @@
 
 		#header {
 			display: flex;
-			flex-flow: row wrap;
+			flex-flow: column wrap;
 			width: var(--col-12);
-			justify-content: space-around;
+			align-items: center;
 		}
 
 		#header-title {
@@ -57,8 +61,8 @@
 		#nav-bar{
 			display: flex;
 			align-items: center;
-			justify-content: space-evenly;
-			flex-grow: 2;
+			justify-content: space-around;
+			width: var(--col);
 		}
 
 		#nav-bar > a {
@@ -74,10 +78,11 @@
 		}
 		.promo-article {
 			background-color: rgb(220, 220, 220);
-			width: 250px;
-			height: 250px;
+			width: 75%;
+			height: auto;
 			border: 1px black solid;
 			margin: 10px;
+			padding: 5px;
 		}
 
 		#promo {
@@ -85,15 +90,49 @@
 			flex-wrap: column, wrap;
 			width: var(--col-12);
 			justify-content: space-around;
-			background-color: cornflowerblue;
 		}
+
+		#intro > h3{
+
+			text-align: center;
+		}
+
+		#intro > p{
+
+			text-align: center;
+		}
+
+		#video-file {
+			display: flex;
+			justify-content: center;
+			width: var(--col-12);
+		}
+
+		.promo-header > h3 {
+			text-align: center;
+		}
+
+		.promo-article > h4 {
+			text-align: center;
+			font-weight: bold;
+		}
+
+		.promo-article > p {
+			text-align: justify;
+		}
+
+		h4 {
+			border-bottom: 2px gray solid;
+		}
+
+
 
 		/* Use a media query to add a breakpoint at 800px */
 		@media screen and (max-width: 800px){
 
 			#header, #intro, #video-file, #promo, #capture-email {
 				width: 100%; /* The width is 100%, when the viewport is 800px or smaller*/
-			}
+			} 
 
 			#header {
 				display: flex;
@@ -106,6 +145,18 @@
 				width: var(--col-12);
 				justify-content: space-around;
 			}
+
+
+			#promo-header {
+				text-align: center;
+			}
+
+			#promo {
+				display: flex;
+				flex-flow: column wrap;
+				align-content: center;
+				width: var(--col-12);
+			}
 		}
 
 	</style>
@@ -114,18 +165,18 @@
 
 <body>
 	<header id="header">
-		<img id="header-img" src="./media/pictures/coffe.jpg" alt="coffee logo" height="250" width="250">
-		<h1 id=header-title>The Coffee Shop</h1>
 		<nav id="nav-bar">
 			<a href="#intro" class="nav-link">INTRO</a>
 			<a href="#video-file" class="nav-link">VIDEO</a>
 			<a href="#promo" class="nav-link">PROMO</a>
 		</nav>
+		<img id="header-img" src="./media/pictures/coffe.jpg" alt="coffee logo" height="250" width="250">
+		<h1 id=header-title>The Coffee Shop</h1>
 	</header>
 	<section id="intro">
-		<h3>Our Mission</h3>
-		<p>Serve and delight all who come through our doors each morning. That is our mission and promise, from our team, to you,
-			your family, and friends. Welcome.
+		<h3 id="intro-header">Our Mission</h3>
+		<p><q>Serve and delight all who come through our doors each morning. That is our mission and promise, from our team, to you,
+			your family, and friends. Welcome.</q>
 		</p>
 	</section>
 	<section id="video-file">
@@ -134,21 +185,27 @@
 		Your browser does not support the video tag
 		</video>
 	</section>
-	<h3>PROMOTIONS</h3>
+	<h3 id="promo-header">Promotions</h3>
 	<section id="promo">
 		<article class="promo-article">
-			<header class="promo-header">PROMO ONE</header>
-			<p>Coffee for one</p>
+			<header class="promo-header">
+				<h3>PROMO ONE</h3>
+			</header>
+			<h4>Coffee for one</h4>
 			<p>Prepay five days and get your favorite drink (hot or cold), and one of our pastries.</p>
 		</article>
 		<article class="promo-article">
-			<header class="promo-header">PROMO TWO</header>
-			<p>Coffee for two</p>
+			<header class="promo-header">
+				<h3>PROMO TWO</h3>
+			</header>
+			<h4>Coffee for two</h4>
 			<p>Prepay five days and get two of your favorite drinks (hot or cold), and two of our pastries.</p>
 		</article>
 		<article class="promo-article">
-			<header class="promo-header">PROMO THREE</header>
-			<p>Office Combo</p>
+			<header class="promo-header">
+				<h3>PROMO THREE</h3>
+			</header>
+			<h4>Office Combo</h4>
 			<p>Prepay five days and get five of your favorite drinks (hot or cold), and five of our pastries.</p>
 		</article> 
 	</section>
