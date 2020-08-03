@@ -10,9 +10,6 @@
 			box-sizing: border-box;
 		}
 
-		body {
-			margin: 5%;
-		}
 
 		/* Variables Declaration */
 		:root {
@@ -47,22 +44,26 @@
 
 
 		#header {
+			position: absolute;
+			top: 0px;
 			display: flex;
 			flex-flow: column wrap;
 			width: var(--col-12);
-			align-items: center;
-		}
-
-		#header-title {
-			display: flex;
+			justify-content: space-around;
 			align-items: center;
 		}
 
 		#nav-bar{
 			display: flex;
-			align-items: center;
+			flex-flow: row wrap;
 			justify-content: space-around;
-			width: var(--col);
+			width: var(--col-12);
+			background-color: greenyellow;
+		}
+
+		#header-title {
+			width: var(--col-12);
+			text-align: center;
 		}
 
 		#nav-bar > a {
@@ -132,23 +133,6 @@
 
 			#header, #intro, #video-file, #promo, #capture-email {
 				width: 100%; /* The width is 100%, when the viewport is 800px or smaller*/
-			} 
-
-			#header {
-				display: flex;
-				flex-flow: row, wrap;
-				justify-content: center;
-			}
-
-			#nav-bar {
-				display: flex;
-				width: var(--col-12);
-				justify-content: space-around;
-			}
-
-
-			#promo-header {
-				text-align: center;
 			}
 
 			#promo {
